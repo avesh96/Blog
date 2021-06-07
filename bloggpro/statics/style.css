@@ -1,0 +1,16 @@
+body{
+    background-color: #192734;
+    color: antiquewhite;
+    font-style: italic;
+    
+}
+.form-control{
+    background-color: rgb(177,168,168);
+}
+.jumbo-color {
+    background-color: rgb(83,81,81);
+}
+
+.topnav-right {
+    float: right;
+  }

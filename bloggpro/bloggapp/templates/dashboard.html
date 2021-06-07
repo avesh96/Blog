@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block msg %}
+{% if messages %}
+    {% for message in messages %}
+        <div {% if message.tags %} class="btn btn-{{message.tags}}" {% endif %}> <strong>{{message}}</strong>> </div>
+        
+    {% endfor %}
+{% endif %}
+{% endblock msg %}
+{% block content %}
+current user :{{posts.user}}
+user name:{{request.user}}
+post id: {{posts.id}}
+<div class="col-sm-10">
+    <h3 class="my-5">Dashboard </h3>
+
+    <a href="{% url 'addpost' %}" class="btn btn-success">Add Post</a>
+    <h4 class="text-center alert alert-info mt-3">Show Post Information</h4>
+            {% if posts %}
+            
+            <table class="table table-hover bg white">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col" style="width: 2%;">ID</th>
+                        <th scope="col" style="width: 25%;">Title</th>
+                        <th scope="col" style="width: 55%;">Description</th>
+                        <th scope="col" style="width: 25%;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
+                        {% if post.user == request.user%}
+                            <tr>
+                                <td scope="row">{{post.id}}</td>
+                                <td>{{post.title}}</td>
+                                <td>{{post.decs}}</td>
+                                <td class="text-center">
+                                <a href="{% url 'updatepost' post.id %}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{% url 'deletepost' post.id %}" method="post" class="d-inline">
+                                    {% csrf_token %}
+                                    <input type="submit" class = "btn btn-danger btn-sm" value="Delete">
+                                </form>
+                                </td>
+                        
+                            </tr>
+                        {% endif %}
+    
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h4 class="text-center alert alert-warning">No Record</h4>
+            
+        {% endif %}
+            
+    
+{% endblock content %}
+    
+</div>
+
