@@ -24,8 +24,7 @@ urlpatterns = [
     path('bloggapp/', include('bloggapp.urls')),
     path('',home,name = "home"),
     path('about/',about,name = "about"),
-    #path('contact/',contact,name = "contact"),
-    #path('success/',success,name = "success"),
+
     path('user_signup/',user_signup,name = "signup"),
     path('user_login/',user_login,name="login"),
     path('dashboard/',dashboard,name="dashboard"),
@@ -34,8 +33,6 @@ urlpatterns = [
     path('updatepost/<int:id>/',updatepost,name='updatepost'),
     path('deletepost/<int:id>/',deletepost,name="deletepost"),
     path('delc',deleting_cookie, name='delc'),
-    #path('dashboard/',Dashboard.as_view(),name='dashboard'),
-    #path('addpost',AddPost.as_view(),name='addpost')
-    #path( "*/migrations/*.py", not name= "__init__.py" -delete)
+
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
