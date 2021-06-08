@@ -17,15 +17,7 @@ class ContactForm(forms.ModelForm):
 
     
 
-#class EmailForm(forms.Form):
-#    #name= forms.CharField(max_length=500)
-#    name = forms.CharField(max_length=500, label="Name", widget=forms.TextInput(attrs={'class':'form-control'}))
-#    email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control'}))
-#    message = forms.CharField(label='Message',widget=forms.Textarea(
-#                        attrs={'class':'form-control'}))
 
-#    def __str__(self):
-#        return self.name
 
 
 
