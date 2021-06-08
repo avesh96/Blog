@@ -13,13 +13,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title + '|' + str(self.user)
 
-#class Author(models.Model):
- #   user = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
-  #  def __str__(self):
-   #     return self.name
-
-    #def get_absolute_url(self):
-     #   return reverse('author-detail', kwargs={'pk': self.pk})
 
 
 
