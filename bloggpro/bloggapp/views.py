@@ -4,14 +4,13 @@ from .form import SignUpForm,LoginForm, PostForm, ContactForm
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from .models import Post,Contact
-#from django.core.mail import send_mail, BadHeaderError
+
 from django.http import HttpResponse
-#from django.conf import settings
-#from blogpro.settings import EMAIL_HOST_USER
+
 from . import form
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, ListView
-#from django.core.mail import send_mail
+
 
 
 def contact(request):
@@ -39,23 +38,7 @@ def contact(request):
         {'forms': form}
     )
 
-#def contact(request):
-#    sub = form.EmailForm()
-#    if request.method == 'POST':
-#        #name=request.POST["name"]
-#        subject=request.POST["name"]
-#        message=request.POST["message"]
-#        email=request.POST["email"]
-        
-#        User = form.EmailForm(request.POST)
-       
-#        email_from = settings.EMAIL_HOST_USER
-#        recipient_list = [email, ]
-#        send_mail(subject, message, email_from, recipient_list )
-#        messages.success(request, 'Send Successfully !!!')
 
-     
-#    return render(request, 'contact.html', {'forms':sub})
 
 
 
